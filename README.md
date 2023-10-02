@@ -28,7 +28,7 @@ Labs list:
 │   ├── features              - Contains scripts related to feature engineering and transformation.
 │   │   └── __init__.py
 │   ├── models
-│   │   ├── forecast.py      - Script used for forecasting using trained models.
+│   │   ├── ts_forecast.py      - Script used for forecasting using trained models.
 │   │   ├── train.py         - Contains the ts training routines for the models.
 │   │   └── __init__.py
 │   ├── scripts
