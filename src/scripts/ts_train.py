@@ -16,7 +16,7 @@ from src.utils.base_helpers import set_seed
 from src.utils.ts_metrics import compute_horizon_metrics, compute_metrics
 from src.data.datasets import TimeSeriesDataset
 from src.models.train import run_train_loop
-from src.models.forecast import make_forecasts
+from src.models.ts_forecast import make_forecasts
 from models.time_series.LSTM import LSTMModel
 
 import mlflow

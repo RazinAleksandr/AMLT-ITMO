@@ -6,7 +6,7 @@ import warnings
 import joblib
 
 from src.utils.base_helpers import set_seed
-from src.models.forecast import arima_train_forecast
+from src.models.ts_forecast import arima_train_forecast
 from src.utils.ts_helpers import arima_postprocess
 from src.utils.ts_metrics import compute_metrics
 from src.utils.ts_plots import plot_forecast
