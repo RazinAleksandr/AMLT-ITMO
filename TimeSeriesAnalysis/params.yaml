@@ -1,0 +1,32 @@
+paths:
+  raw: "/home/arazin/main/university/AMLT/data/raw/train.csv"
+  preprocessed: "/home/arazin/main/university/AMLT/data/preprocessed/preprocessed.csv"
+  train_val_test: "/home/arazin/main/university/AMLT/data/interim"
+  prediction_path: "/home/arazin/main/university/AMLT/data/predicted"
+  scaler: "/home/arazin/main/university/AMLT/data/scalers/scaler.pkl"
+  model: "/home/arazin/main/university/AMLT/data/models/"
+  plots: "/home/arazin/main/university/AMLT/figures/time_series"
+
+train_parameters:
+  train_val_test: "0.6,0.2,0.2"
+  train_batch_size: 128
+  test_batch_size: 1
+
+model_parameters:
+  lag_input: 12
+  forecast_horizon: 67
+
+arima_model_parameters:
+  order: [5, 1, 5]
+
+lstm_model_parameters:
+  hidden_d: 64
+  layer_d: 1
+
+exp_parameters:
+  LR: 0.001
+  manual_seed: 42
+  epochs: 700
+  device: "cpu"
+
+log_params:

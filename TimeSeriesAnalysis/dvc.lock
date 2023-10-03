@@ -1,0 +1,52 @@
+schema: '2.0'
+stages:
+  raw_train_test_split:
+    cmd: python src/scripts/ts_preproc.py /home/arazin/main/university/AMLT/data/raw/train.csv
+      /home/arazin/main/university/AMLT/data/preprocessed/preprocessed.csv /home/arazin/main/university/AMLT/data/interim
+      /home/arazin/main/university/AMLT/data/scalers/scaler.pkl 12 67
+    deps:
+    - path: data/raw/train.csv
+      hash: md5
+      md5: b84434bf8eede5345ec04e41dfe9d86e
+      size: 121800373
+    - path: src/scripts/ts_preproc.py
+      hash: md5
+      md5: ca86385e8e9d6c4152690795add53366
+      size: 2799
+    outs:
+    - path: data/interim/test_preprocessed.csv
+      hash: md5
+      md5: 20f1339a6a71cc9e801cccbc3b699b09
+      size: 485112
+    - path: data/interim/train_preprocessed.csv
+      hash: md5
+      md5: 5710f749a82c7d0e7215369a4052d875
+      size: 1473718
+    - path: data/interim/val_preprocessed.csv
+      hash: md5
+      md5: 3f46794a618ebabaa8d2199cbe0131d7
+      size: 484043
+    - path: data/preprocessed/preprocessed.csv
+      hash: md5
+      md5: e85a5ab60d79f71d13277866affd7623
+      size: 49495
+    - path: data/scalers/scaler.pkl
+      hash: md5
+      md5: cd82dc0491b8a6c547926d910a65465f
+      size: 5455
+  train:
+    cmd: python src/scripts/ts_arima_train.py /home/arazin/main/university/AMLT/data/interim
+      /home/arazin/main/university/AMLT/params.yaml /home/arazin/main/university/AMLT/data/predicted
+    deps:
+    - path: data/interim/test_preprocessed.csv
+      hash: md5
+      md5: 20f1339a6a71cc9e801cccbc3b699b09
+      size: 485112
+    - path: data/interim/train_preprocessed.csv
+      hash: md5
+      md5: 5710f749a82c7d0e7215369a4052d875
+      size: 1473718
+    - path: data/interim/val_preprocessed.csv
+      hash: md5
+      md5: 3f46794a618ebabaa8d2199cbe0131d7
+      size: 484043
