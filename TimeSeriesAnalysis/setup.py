@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='AMLT',
+    name='AMLT-Time-Series',
     packages=find_packages(),
     version='0.1',
     description='AMLT ITMO track.',
